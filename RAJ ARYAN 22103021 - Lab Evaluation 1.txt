@@ -1,0 +1,109 @@
+﻿Open Source Software Lab
+Evaluation 1
+
+
+Thursday (29 Aug 2024) – 9 to 11 AM
+.students = {
+    "Raj Aryan": {
+        "class": "10th",
+        "height": 180,  
+        "weight": 75,   
+        "preferred_sport": None,
+        "agility": 7,
+        "speed": 8,
+        "strength": 6
+    },
+    "Anubhav Tyagi": {
+        "class": "12th",
+        "height": 165,
+        "weight": 55,
+        "preferred_sport": None,
+        "agility": 9,
+        "speed": 6,
+        "strength": 7
+    },
+     "Sarandeep Sohil": {
+        "class": "11th",
+        "height": 177,
+        "weight": 62,
+        "preferred_sport": None,
+        "agility": 6,
+        "speed": 9,
+        "strength": 8
+    },
+   
+}
+
+
+# Function to generate a diet plan
+def generate_diet_plan(weight, height):
+    bmi = weight / ((height / 100) ** 2)
+    if bmi < 18:
+        return "Increase calorie intake with balanced nutrition."
+    elif 18 <= bmi < 24:
+        return "Maintain a balanced diet with moderate calorie intake."
+    else:
+        return "Focus on a calorie-controlled diet with more physical activities."
+    
+    # Function to recommend sport
+def recommend_sport(agility, speed, strength):
+    if agility > 8 and speed > 7:
+        return "Football"
+    elif agility > 8 and strength > 7:
+        return "Javelin Throw"
+    elif speed > 7:
+        return "Cricket"
+    else:
+        return "Chess"
+    
+    
+#  logic to process each student
+for student, details in students.items():
+    # Generate diet plan
+    diet_plan = generate_diet_plan(details["weight"], details["height"])
+    students[student]["diet_plan"] = diet_plan
+    
+    # Recommend sport
+    recommended_sport = recommend_sport(details["agility"], details["speed"], details["strength"])
+    students[student]["preferred_sport"] = recommended_sport
+    
+    # Print out the student details with diet plans and sport recommendations
+for student, details in students.items():
+    print(f"Student: {student}")
+    print(f"Class: {details['class']}")
+    print(f"Height: {details['height']} cm")
+    print(f"Weight: {details['weight']} kg")
+    print(f"Diet Plan: {details['diet_plan']}")
+    print(f"Recommended Sport: {details['preferred_sport']}")
+    print("\n")
+
+
+
+
+OUTPUT
+Student: Raj Aryan
+Class: 10th
+Height: 180 cm
+Weight: 75 kg
+Diet Plan: Maintain a balanced diet with moderate calorie intake.
+Recommended Sport: Cricket
+
+
+
+
+Student: Anubhav Tyagi
+Class: 12th
+Height: 165 cm
+Weight: 55 kg
+Diet Plan: Maintain a balanced diet with moderate calorie intake.
+Recommended Sport: Chess
+
+
+
+
+Student: Sarandeep Sohil
+Class: 11th
+Height: 177 cm
+Weight: 62 kg
+Diet Plan: Maintain a balanced diet with moderate calorie intake.
+Recommended Sport: Cricket
